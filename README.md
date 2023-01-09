@@ -5,6 +5,7 @@ This is a console based dice game
 1. Clone the project 
 2. Import the project as existing maven application
 3. I have used JDK 8 to develop the application
+4. Run the project as spring boot app
 4. The application will be running on the default port - 8080
 
 #Basic-Functionality
