@@ -19,7 +19,7 @@ This is a console based dice game
 4. Follow the console to watch the game
 5. Fetch current scores : http://localhost:8080/api/v1/game/current-scores
 
-#Documentation
+#Documentation - 
 This application is integrated with swagger. Swagger documentation can be found in the location below : 
 1. http://localhost:8080/swagger-ui/index.html
 2. http://localhost:8080/v2/api-docs
