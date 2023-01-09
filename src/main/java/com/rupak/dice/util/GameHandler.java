@@ -28,6 +28,7 @@ public class GameHandler extends Thread{
 		int currentPlayerId = 1;
 		int totalPlayer = ApplicationDB.getTotalPlayer();
 		Boolean gameRunFlag = true;
+		ApplicationDB.IS_GAME_ALREADY_RUNNING = true;
 		
 		while(gameRunFlag) {
 			if(currentPlayerId > totalPlayer) {
@@ -79,6 +80,7 @@ public class GameHandler extends Thread{
 			if(currentPlayer.getTotalScore() >= ApplicationDB.WINING_SCORE) {
 				log.info("Game Finished.");
 				log.info("Winner : "+currentPlayer.getName());
+				ApplicationDB.IS_GAME_ALREADY_RUNNING = false;
 				gameRunFlag = false;
 			}
 			
@@ -89,7 +91,6 @@ public class GameHandler extends Thread{
 			}
 			
 		}
-		
 	}
 
 	

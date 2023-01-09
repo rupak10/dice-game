@@ -1,3 +1,7 @@
+/**
+ * @author :  Rupak Kumar Das 
+ * @contact : rupak.cse010@gmail.com
+ */
 package com.rupak.dice;
 
 import java.util.Collections;
@@ -21,7 +25,6 @@ public class DiceGameApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DiceGameApplication.class, args);
 	}
-	
 	
 	@Bean
 	RestTemplate restTemplate() {
@@ -50,12 +53,6 @@ public class DiceGameApplication {
 				"https://github.com/rupak10/dice-game",
 				Collections.emptyList());
 	}
-	
 
 }
 
-//html documentation path
-//http://localhost:8080/swagger-ui/index.html
-
-//json documentation path
-//http://localhost:8080/v2/api-docs

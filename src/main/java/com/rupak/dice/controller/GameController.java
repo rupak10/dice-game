@@ -48,22 +48,30 @@ public class GameController {
 				return result;
 			}
 			
-			gameService.initializePlayers();
-			GameHandler gameHandler = new GameHandler(restTemplate);
-			gameHandler.start();
-			
-			result.put("p_out", "1");
-			result.put("p_error_code", "SUCCESS-000");
-			result.put("p_error_message", "Dice game started successfully");
-			result.put("p_current_score_url", CURRENT_SCORE_URL);
-			
-			log.info("Exiting startGame() method of GameController");
-			return result;
-			
+			if(!ApplicationDB.IS_GAME_ALREADY_RUNNING) {
+				gameService.initializePlayers();
+				GameHandler gameHandler = new GameHandler(restTemplate);
+				gameHandler.start();
+				
+				result.put("p_out", "1");
+				result.put("p_error_code", "SUCCESS-000");
+				result.put("p_error_message", "Dice game started successfully");
+				result.put("p_current_score_url", CURRENT_SCORE_URL);
+				
+				log.info("Exiting startGame() method of GameController");
+				return result;
+			}
+			else {
+				result.put("p_out", "0");
+				result.put("p_error_code", "GAME-START-ERR-002");
+				result.put("p_error_message", "One game is already running");
+				log.info("Exiting startGame() method of GameController");
+				return result;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			result.put("p_out", "0");
-			result.put("p_error_code", "GAME-START-ERR-002");
+			result.put("p_error_code", "GAME-START-ERR-003");
 			result.put("p_error_message", "Processing Error !");
 			log.info("Exiting startGame() method of GameController");
 			return result;
