@@ -47,7 +47,7 @@ public class DiceGameApplication {
 				"Free to use",
 				new springfox.documentation.service.Contact("Rupak Kumar Das", "rupak.cse010@gmail.com", "https://github.com/rupak10/"),
 				"API License",
-				"https://github.com/rupak10/swagger-demo-app",
+				"https://github.com/rupak10/https://github.com/rupak10/dice-game",
 				Collections.emptyList());
 	}
 	
