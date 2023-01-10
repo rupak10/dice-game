@@ -15,6 +15,11 @@ This is a console based dice game
 
 #Game-Flow
 1. Add player : http://localhost:8080/api/v1/players/add
+ Sample Request :
+ {
+    "name" : "Rupak",
+    "age" : 29
+}
 2. Start game : http://localhost:8080/api/v1/game/start
 3. You can't start another game round while one round is running
 4. Follow the console to watch the game
